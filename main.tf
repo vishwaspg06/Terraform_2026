@@ -120,8 +120,8 @@ resource "aws_security_group" "db_sg" {
 
 # Database server in private subnet (no public IP)
 resource "aws_instance" "db_server" {
-  ami                    = "ami-0c02fb55956c7d316"
-  instance_type          = "t2.micro"
+  ami                    = "ami-0e12ffc2dd465f6e4"
+  instance_type          = "t3.micro"
   subnet_id              = aws_subnet.private_subnet.id
   vpc_security_group_ids = [aws_security_group.db_sg.id]
   associate_public_ip_address = false
